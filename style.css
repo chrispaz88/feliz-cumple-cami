@@ -95,7 +95,7 @@ main{animation:fadein 1.2s ease}
 /* ================= STATS ================= */
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px}
 .stat{background:linear-gradient(160deg,rgba(255,255,255,.08),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.1);border-radius:22px;padding:24px 14px;text-align:center;backdrop-filter:blur(6px)}
-.stat b{display:block;font-family:var(--serif);font-size:clamp(2.2rem,8vw,3rem);color:var(--gold-2);font-variant-numeric:tabular-nums}
+.stat b{display:block;font-family:var(--serif);font-size:clamp(2.2rem,8vw,3rem);color:var(--gold-2);font-variant-numeric:lining-nums tabular-nums;font-feature-settings:"lnum" 1,"tnum" 1}
 .stat span{color:var(--muted);font-size:.92rem}
 .stat:nth-child(2){transition-delay:.1s}.stat:nth-child(3){transition-delay:.2s}.stat:nth-child(4){transition-delay:.3s}
 
@@ -261,3 +261,43 @@ main{animation:fadein 1.2s ease}
   .reasons{grid-template-columns:repeat(auto-fill,minmax(170px,1fr))}
 }
 @media (prefers-reduced-motion:reduce){*{animation-duration:.01s!important;transition-duration:.01s!important}}
+
+/* ===== Responsive: pantallas bajas (celular horizontal) ===== */
+.lock{justify-content:safe center}
+@media (max-height:640px){
+  .lock{justify-content:flex-start;padding-top:16px}
+  .gift{width:80px;height:80px}
+  .gift-box{height:48px}.gift-lid{top:20px;height:18px}.bow{top:-16px;width:22px;height:18px;border-width:4px}
+  .lock-title{margin-top:8px}.lock-sub{margin-bottom:10px}
+  .keypad{grid-template-columns:repeat(3,60px);gap:8px}.keypad button{height:50px;font-size:1.2rem}
+  .hero{min-height:auto;padding-top:40px}
+  .hero-photo{width:min(40vh,220px)}
+}
+@media (max-height:640px) and (orientation:landscape){
+  .lock{display:grid;grid-template-columns:1fr 1fr;align-items:center;justify-items:center;column-gap:20px}
+  .lock>.gift,.lock>.lock-title,.lock>.lock-sub,.lock>.pin,.lock>.pin-hint,.lock>.pin-msg{grid-column:1}
+  .lock>.keypad{grid-column:2;grid-row:1/span 6}
+}
+/* ===== Teléfonos muy angostos ===== */
+@media (max-width:360px){
+  .pin i{width:26px;height:38px;font-size:1.05rem}.pin{gap:4px}
+  .keypad{grid-template-columns:repeat(3,64px)}
+}
+/* ===== Tablet ===== */
+@media (min-width:700px){
+  .sec{padding:110px 32px 50px}
+  .hero-photo{width:min(40vw,320px)}
+  .stats{grid-template-columns:repeat(4,1fr)}
+  .reel{flex-basis:260px}
+  .openwhen{grid-template-columns:repeat(3,1fr)}
+  .coupons{grid-template-columns:repeat(2,1fr)}
+  .cake{transform:scale(1.2);margin:30px 0}
+  .letter{padding:48px 52px 40px;font-size:1.3rem}
+  .lightbox img{max-height:84vh}
+}
+@media (min-width:1000px){
+  .polaroids{grid-template-columns:repeat(5,1fr)}
+  .reasons{grid-template-columns:repeat(6,1fr)}
+  .coupons{grid-template-columns:repeat(4,1fr)}
+  .openwhen{grid-template-columns:repeat(6,1fr)}
+}

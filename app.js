@@ -265,7 +265,7 @@ function init() {
 
   // Contadores
   const day = 864e5, now = new Date();
-  $('#daysAlive').dataset.to = Math.floor((now - new Date(2003, 9, 15)) / day);
+  $('#daysAlive').dataset.to = Math.floor((now - new Date(2003, 9, 14)) / day);
   $('#daysTogether').dataset.to = Math.floor((now - new Date(2026, 1, 11)) / day);
   const cio = new IntersectionObserver(es => es.forEach(e => {
     if (!e.isIntersecting) return; cio.unobserve(e.target);
