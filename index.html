@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0a1633">
+<title>Un regalo para ti 🎁</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎁</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="sky" aria-hidden="true"></canvas>
+
+<section id="lock" class="lock">
+  <div class="gift" id="gift" aria-hidden="true">
+    <div class="gift-glow"></div>
+    <div class="gift-box"></div>
+    <div class="gift-lid"><span class="bow l"></span><span class="bow r"></span></div>
+  </div>
+  <h1 class="lock-title">Un regalo para <span class="script">ti</span></h1>
+  <p class="lock-sub">Para abrirlo, escribe la fecha de tu cumpleaños</p>
+  <div class="pin" id="pin" aria-live="polite">
+    <i></i><i></i><em>/</em><i></i><i></i><em>/</em><i></i><i></i><i></i><i></i>
+  </div>
+  <p class="pin-hint">DD / MM / AAAA</p>
+  <p class="pin-msg" id="pinMsg"></p>
+  <div class="keypad" id="keypad">
+    <button>1</button><button>2</button><button>3</button>
+    <button>4</button><button>5</button><button>6</button>
+    <button>7</button><button>8</button><button>9</button>
+    <button data-k="del" aria-label="Borrar">⌫</button><button>0</button><button data-k="hint" aria-label="Pista">💡</button>
+  </div>
+</section>
+
+<div id="opening" class="opening" hidden><p class="script">Abriendo tu regalo…</p><div class="bar"><span id="barFill"></span></div></div>
+
+<main id="app" hidden></main>
+
+<div id="lightbox" class="lightbox" hidden>
+  <button class="lb-close" aria-label="Cerrar">✕</button>
+  <button class="lb-nav prev" aria-label="Anterior">‹</button>
+  <figure><img id="lbImg" alt=""><figcaption id="lbCap"></figcaption></figure>
+  <button class="lb-nav next" aria-label="Siguiente">›</button>
+</div>
+
+<div id="modal" class="modal" hidden>
+  <div class="modal-card">
+    <button class="lb-close" aria-label="Cerrar">✕</button>
+    <p class="modal-tag">Abra cuando…</p>
+    <h3 id="modalTitle" class="script"></h3>
+    <p id="modalText"></p>
+    <p class="sign">— Cristhian 💙</p>
+  </div>
+</div>
+
+<button id="musicBtn" class="music-btn" hidden aria-label="Música">♫</button>
+<canvas id="fx" aria-hidden="true"></canvas>
+<script src="app.js"></script>
+</body>
+</html>
